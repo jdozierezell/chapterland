@@ -4,29 +4,6 @@ Template Name: Home Page
 */
 
 get_header(); ?>
-    <div class="container">
-        <header class="branding">
-            <img class="siteName" src="images/logo.jpg" alt="">
-            <img class="brandLogo" src="images/header-right-logo.jpg" alt="">
-        </header>
-    </div>
-    <div class="wide">
-        <div class="container">
-            <nav class="main-nav">
-                <div class="menu-button">Menu</div>
-                <ul class="flexnav" data-breakpoint="844">
-                    <li><a href="#">Living the Brand</a></li>
-                    <li><a href="#">Style Guide</a></li>
-                    <li><a href="#">Image Library</a></li>
-                    <li><a href="#">Templates</a></li>
-                    <li><a href="#">Publications</a></li>
-                    <li><a href="#">Operations</a></li>
-                    <li><a href="#">Media Center</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
 
 <?php while ( have_posts() ) : the_post(); ?>
     <?php

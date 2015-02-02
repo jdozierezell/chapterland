@@ -20,17 +20,18 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'chapterland' ); ?></a>
-
-	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Primary Menu', 'chapterland' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
-
+    <header class="container">
+        <section class="branding">
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="siteName" src="<?php bloginfo('template_directory'); ?>/images/logo.jpg" alt=""></a>
+            <img class="brandLogo" src="<?php bloginfo('template_directory'); ?>/images/header-right-logo.jpg" alt="">
+        </section>
+    </header>
+    <div class="wide">
+        <div class="container">
+            <nav class="main-nav">
+                <div class="menu-button" aria-controls="menu" aria-expanded="false"><?php _e( 'Touch for Menu', 'chapterland' ); ?></div>
+			<?php callMainNav(); // secret sauce located in library/navigation.php ?>
+            </nav>
+        </div>
+    </div>
 	<div id="content" class="site-content">

@@ -6,6 +6,11 @@
  */
 
 /**
+ * Require navigation setup 
+ */
+require('library/navigation.php');
+
+/**
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
@@ -46,12 +51,7 @@ function chapterland_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	//add_theme_support( 'post-thumbnails' );
-
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'chapterland' ),
-	) );
+	add_theme_support( 'post-thumbnails' );
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
