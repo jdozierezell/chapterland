@@ -1,0 +1,61 @@
+//susy
+$susy: (
+  flow: ltr,
+  math: fluid,
+  output: float,
+  gutter-position: after,
+  container: auto,
+  container-position: center,
+  columns: 5,
+  gutters: .01,
+  column-width: false,
+  global-box-sizing: content-box,
+  last-flow: to,
+  debug: (
+    image: hide,
+    color: rgba(#66f, .25),
+    output: background,
+    toggle: top right,
+  ),
+  use-custom: (
+    background-image: true,
+    background-options: false,
+    box-sizing: true,
+    clearfix: false,
+    rem: true,
+  )
+);
+
+//colors
+
+$blue: #00629b;
+$blue2: #003873;
+$cyan: #00a5c1;
+$cyan2: #007ea4;
+$magenta: #7a3870;
+$magenta2: #511346;
+$violet: #aa4690;
+$violet2: #841e67;
+$red: #e33a24;
+$red2: #d61507;
+$orange: #f37021;
+$orange2:#ed4605;
+$yellow: #fdb913;
+$yellow2: #fb9800;
+$gray: #84898a;
+$gray2: #5a6062;
+$white: #fff;
+
+//screen sizes
+
+$phone: 320px;
+$widePhone: 640px;
+$tablet: 906px;
+$wideTablet: 1080px;
+$screen: 1224px;
+$wideScreen: 1824;
+
+
+//fonts
+
+$lato: 'Lato', sans-serif;

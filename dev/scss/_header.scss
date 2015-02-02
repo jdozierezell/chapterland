@@ -1,0 +1,17 @@
+.branding {
+    padding-top: 1em;
+        .siteName {
+            padding-left: 5%;
+            @media (max-width: $widePhone) {
+                width: 80%;
+            }
+        }
+        .brandLogo {
+            display: none;
+            padding-right: 5%;
+            @media (min-width: $tablet) {
+                display: inline-block;
+                float: right;
+        }   
+    }
+}

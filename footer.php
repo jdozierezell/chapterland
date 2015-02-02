@@ -9,14 +9,19 @@
 ?>
 
 	</div><!-- #content -->
-
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'chapterland' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'chapterland' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'chapterland' ), 'chapterLand', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+    <footer class="footer wide">
+        <div class="container">
+            <div class="footerLogo"> 
+                <a href="#" class="footer-logo"><img src="<?php bloginfo('template_directory'); ?>/images/footer-logo.jpg" alt="" /></a>
+            </div>
+            <div class="legal">
+                <p>
+                    Copyright © 2015 [New Organization Name]. All Rights Reserved.<br>
+                    <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a> 
+                </p>
+            </div>
+        </div>
+    </footer>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

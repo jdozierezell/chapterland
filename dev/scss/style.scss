@@ -1,0 +1,58 @@
+/*
+    Where the magic happens (or at least is linked to).
+*/
+
+@import 'node_modules/susy/sass/susy';
+@import 'variables';
+/*
+    Styles from underscores.
+*/
+@import 'normalize';
+@import 'typography';
+@import 'forms';
+@import 'navigation';
+@import 'accessibility';
+@import 'alignments';
+@import 'clearings';
+@import 'widgets';
+@import 'content';
+@import 'infinite-scroll';
+@import 'media';
+/*
+    Custom ChapterLand styles.
+*/
+@import 'header';
+@import 'flexnav';
+@import 'grid';
+@import 'menu';
+@import 'home';
+
+
+
+
+body {
+    font-family: $lato;
+}
+
+.footer {
+    padding: 1em;
+}
+
+.footerLogo {
+    @media(min-width:$widePhone){
+        @include span(2 of 5);
+    }
+}
+
+.legal {
+    @media(min-width:$widePhone){
+        @include span (3 at 2 of 5);
+        margin-right: 0;
+    }
+    p {
+        color: $white;
+    }
+    a {
+        color: $cyan;
+    }
+}

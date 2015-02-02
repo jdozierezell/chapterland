@@ -1,0 +1,74 @@
+
+/* Chapterland Styles */
+.main-nav {
+    margin: 0;
+    @media (min-width: $tablet) {
+        margin: 1em 0;
+    }
+    .menu-button {
+        background-color: $blue;
+        color: $white;
+        border-bottom: $yellow .4em solid;
+        .navicon {
+            color: $white;
+        }
+        
+    }
+    .flexnav {
+        padding: 0em;
+        li a {
+            text-decoration: none;
+            color: $white;
+            font-weight: 400;
+            background-color: $cyan;
+            &:hover {
+                background-color: $yellow;
+                color: $blue;
+            }
+            &:active {
+                background-color: $blue;
+                color: $yellow;
+            }
+        }
+        @media (min-width: $tablet) {
+            li {
+                background-color: $blue;
+                border: none;
+                display: inline-block;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+                width: 12.5%;
+                &:last-child a {
+                    border-right: $yellow 1px solid;
+                }
+                a {
+                    background-color: $blue;
+                    border-left: $yellow 1px solid;
+                    color: $white;
+                    font-size: .9em;
+                    font-weight: 400;
+                    text-decoration: none;
+                    &:hover {
+                        background-color: $blue2;
+                        color: $white;
+                    }
+                    &:active {
+                        background-color: $yellow;
+                        color: $white;
+                    }
+                }
+            }
+        }
+        @media (min-width: $tablet) and (max-width: $wideTablet) {
+            li a {
+                    font-size: .7em;
+            }
+        }
+        @media (min-width: $wideTablet) {
+            li a {
+                    font-size: 1.2em;
+            }
+        }
+    }
+}
