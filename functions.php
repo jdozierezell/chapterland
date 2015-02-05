@@ -11,6 +11,16 @@
 require('library/navigation.php');
 
 /**
+ * Require widget area(s) 
+ */
+require('library/widget_areas.php');
+
+/**
+ * Require widget area(s) 
+ */
+require('widgets/login.php');
+
+/**
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
@@ -79,24 +89,6 @@ endif; // chapterland_setup
 add_action( 'after_setup_theme', 'chapterland_setup' );
 
 /**
- * Register widget area.
- *
- * @link http://codex.wordpress.org/Function_Reference/register_sidebar
- */
-function chapterland_widgets_init() {
-	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'chapterland' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
-}
-add_action( 'widgets_init', 'chapterland_widgets_init' );
-
-/**
  * Enqueue scripts and styles.
  */
 function chapterland_scripts() {
@@ -108,6 +100,9 @@ function chapterland_scripts() {
 	wp_enqueue_script( 'chapterland-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
     wp_enqueue_script( 'flex-nav', get_template_directory_uri(). '/vendor/flexnav/js/jquery.flexnav.min.js', array('jquery'), '20150202', true);
     wp_enqueue_script( 'wow', get_template_directory_uri(). '/vendor/wow/dist/wow.js', array('jquery'), '20150202', true);
+    wp_enqueue_script( 'modernizr', get_template_directory_uri(). '/vendor/tympanus/dialog-effects/modernizr.custom.js', array('jquery'), '20150205', true);
+    wp_enqueue_script( 'classie', get_template_directory_uri(). '/vendor/tympanus/dialog-effects/classie.js', array('jquery'), '20150202', true);
+    wp_enqueue_script( 'dialogFx', get_template_directory_uri(). '/vendor/tympanus/dialog-effects/dialogFx.js', array('modernizr'), '20150202', true);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

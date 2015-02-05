@@ -10,7 +10,7 @@ get_header(); ?>
         $pageImage = get_field('page_image');
     ?>
 
-    <div class="container">
+
         <div class="prettyFace wow fadeIn" data-wow-delay=".5s">
             <img src="<?php echo $pageImage['url']; ?>" alt="<?php echo $pageImage['alt']; ?>">
         </div>
@@ -35,13 +35,11 @@ get_header(); ?>
             <?php wp_reset_postdata(); ?>
         <?php endwhile // ACF Repeater ?>
         </ul>
-    </div>
 
 <?php endwhile // WP_Query Loop ?>
 
 <script>
     jQuery(document).ready(function($){
-        $('.flexnav').flexNav();
         if(screen.width > 640) {
             new WOW().init();
         }

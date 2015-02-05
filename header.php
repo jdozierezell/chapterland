@@ -21,6 +21,13 @@
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'chapterland' ); ?></a>
     <header class="container">
+        <div class="login-wrap"><button data-dialog="logindialog" class="trigger">Login to Chapterland</button></div>
+        <div id="logindialog" class="dialog">
+            <div class="dialog__overlay"></div>
+            <div class="dialog__content">
+                <?php dynamic_sidebar( 'upper_right_corner' ); ?><button class="action" data-dialog-close>Close</button></div>
+            </div>
+        </div>
         <section class="branding">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img class="siteName" src="<?php bloginfo('template_directory'); ?>/images/logo.jpg" alt=""></a>
             <img class="brandLogo" src="<?php bloginfo('template_directory'); ?>/images/header-right-logo.jpg" alt="">
@@ -34,4 +41,4 @@
             </nav>
         </div>
     </div>
-	<div id="content" class="site-content">
+    <div class="container">

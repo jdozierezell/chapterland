@@ -8,7 +8,9 @@
  */
 ?>
 
-	</div><!-- #content -->
+
+
+    </div><!-- .container -->
     <footer class="footer wide">
         <div class="container">
             <div class="footerLogo"> 
@@ -25,6 +27,20 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
+    <script>
+        jQuery(document).ready(function($){
+            $('.flexnav').flexNav({'animationSpeed':'100'});
+        });
+        (function() {
+
+            var dlgtrigger = document.querySelector( '[data-dialog]' ),
+                somedialog = document.getElementById( dlgtrigger.getAttribute( 'data-dialog' ) ),
+                dlg = new DialogFx( somedialog );
+
+            dlgtrigger.addEventListener( 'click', dlg.toggle.bind(dlg) );
+
+        })();
+    </script>
 
 </body>
 </html>

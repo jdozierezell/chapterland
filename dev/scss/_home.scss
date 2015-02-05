@@ -25,7 +25,7 @@
             a {
                 display: table-cell;
                 vertical-align: bottom;
-                color: rgba(255,255,255,.9);
+                color: rgba(255,255,255,1);
                 text-decoration: none;
                 div:first-child {
                     padding-top: 100%; /* 4:3 aspect ratio */
@@ -37,15 +37,7 @@
                         height: 100%;
                         content: '';
                         opacity: 0;
-                        -ms-transform: translate3d(0,80%,0);
-                        -moz-transform: translate3d(0,80%,0);
-                        -o-transform: translate3d(0,80%,0);
-                        -webkit-transform: translate3d(0,80%,0);
                         transform: translate3d(0,80%,0);
-                        -o-transition: opacity .50s, -o-transform .50s;
-                        -ms-transition: opacity .50s, -ms-transform .50s;
-                        -moz-transition: opacity .50s, -moz-transform .50s;
-                        -webkit-transition: opacity .50s, -webkit-transform .50s;
                         transition: opacity .50s, transform .50s;
                     }
                 }
@@ -63,9 +55,7 @@
                     }
                     h2 {
                         font-size: 2em;
-                        z-index:1000;
                         position:relative; 
-                        -webkit-transition:-webkit-transform 0.35s, color 0.35s;
                         transition:transform 0.35s, color 0.35s;
                         @media (min-width: $widePhone) and (max-width: $wideTablet ) {
                             font-size: 1em;
@@ -76,7 +66,6 @@
                     }
                     p {
                         font-size: 1em;
-                        -webkit-transition:-webkit-transform 0.35s, color 0.35s;
                         transition:transform 0.35s, color 0.35s;
                         @media (min-width: $widePhone) and (max-width: $tablet ) {
                             font-size: .6em;
@@ -91,10 +80,6 @@
                 }
                 &:hover div:first-child:before{
                     opacity: 1;
-                    -ms-transform: translate3d(0,0,0);
-                    -moz-transform: translate3d(0,0,0);
-                    -o-transform: translate3d(0,0,0);
-                    -webkit-transform: translate3d(0,0,0);
                     transform: translate3d(0,0,0);
                 }
                 &:hover h2, &:hover p {
