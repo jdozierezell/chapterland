@@ -1,0 +1,14 @@
+.alarum {
+    background-color: $red;
+    color: $white;
+    padding: 0.5em 1em;
+    h3 {
+        margin: 0;
+    }
+    a, &:visited, &:hover {
+        color: $white;
+    }
+    a:hover {
+        font-weight: 900;
+    }
+}

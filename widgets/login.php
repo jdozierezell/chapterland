@@ -1,9 +1,10 @@
 <?php 
 
 function loginModal() {
+    $url = strtok(site_url( $_SERVER['REQUEST_URI']), '?'); 
     $args = array(
             'echo'           => true,
-            'redirect'       => site_url( $_SERVER['REQUEST_URI'] ), 
+            'redirect'       => $url, 
             'form_id'        => 'loginform',
             'label_username' => __( 'Username' ),
             'label_password' => __( 'Password' ),
@@ -94,8 +95,9 @@ class ChapterLand_Login_Widget extends WP_Widget {
 		$instance['logged_text'] = ( ! empty( $new_instance['logged_text'] ) ) ? strip_tags( $new_instance['logged_text'] ) : '';
 
 		return $instance;
-	}
-
+	}   
+    
+    
 } // class ChapterLand_Login_Widget
 
 // register ChapterLand_Login_Widget
@@ -103,4 +105,25 @@ function register_Chapterland_Login_Widget() {
     register_widget( 'ChapterLand_Login_Widget' );
 }
 add_action( 'widgets_init', 'register_Chapterland_Login_Widget' );
+
+
+/*
+ *  If login from widget fails
+ */
+ 
+function chapterland_login_fail($username){
+    // Get the reffering page, where did the post submission come from?
+    $referrer = $_SERVER['HTTP_REFERER'];
+ 
+    // if there's a valid referrer, and it's not the default log-in screen
+    if(!empty($referrer) && !strstr($referrer,'wp-login') && !strstr($referrer,'wp-admin')){
+        // let's append some information (login=failed) to the URL for the theme to use
+        wp_redirect($referrer . '?login=failed'); 
+    exit;
+    }
+} 
+
+// hook failed login
+add_action('wp_login_failed', 'chapterland_login_fail'); 
+
 ?> 

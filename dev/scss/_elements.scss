@@ -6,12 +6,26 @@ Elements
 
 
 
-button {
-    background: #00619a;
-    border: none;
+button, 
+.button,
+input[type="button"],
+input[type="submit"] {
+    background-color: $blue;
+    border: $blue 0.1em solid;
     border-radius: 0.4em;
-    color: #fff;
+    color: $white;
+    display: inline-block;
+    line-height: 1.5em;
     padding: 0.6em;
+    text-decoration: none;
+    transition: background-color 500ms;
+    &:visited {
+        color: $white;
+    }
+    &:hover {
+        background-color: $blue2;
+        color: $white;
+    }
 }
 
 .login-wrap {
@@ -19,10 +33,26 @@ button {
     @media(min-width: $widePhone) {
         text-align: right;
     }
-    button {
+    button, 
+    .button {
         border-top-left-radius: 0;
         border-top-right-radius: 0;
         padding-left: 1.4em;
         padding-right: 1.4em;
     }
+}
+
+.btn-close {
+  background: none;
+  border: none;
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  &:hover i {
+    color: $white;
+  }
+  i {
+    color: $blue;
+    font-size: 2.5em;
+  }
 }

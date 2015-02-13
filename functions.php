@@ -6,6 +6,11 @@
  */
 
 /**
+ * Require admin privileges 
+ */
+require('library/admin_privilege.php');
+
+/**
  * Require navigation setup 
  */
 require('library/navigation.php');
@@ -14,6 +19,11 @@ require('library/navigation.php');
  * Require widget area(s) 
  */
 require('library/widget_areas.php');
+
+/**
+ * Require custom login page 
+ */
+require('library/custom_login.php');
 
 /**
  * Require widget area(s) 
@@ -94,6 +104,7 @@ add_action( 'after_setup_theme', 'chapterland_setup' );
 function chapterland_scripts() {
 	wp_enqueue_style( 'chapterland-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Lato:400,700,900' );
+	wp_enqueue_style( 'font-awesome', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css' );
 	wp_enqueue_style( 'animate.css', get_template_directory_uri() . '/vendor/animate.css/animate.css' );
 
 	wp_enqueue_script( 'chapterland-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
