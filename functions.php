@@ -103,17 +103,17 @@ add_action( 'after_setup_theme', 'chapterland_setup' );
  */
 function chapterland_scripts() {
 	wp_enqueue_style( 'chapterland-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Lato:400,700,900' );
-	wp_enqueue_style( 'font-awesome', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css' );
-	wp_enqueue_style( 'animate.css', get_template_directory_uri() . '/vendor/animate.css/animate.css' );
+    wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Lato:400,700,900' );
+    wp_enqueue_style( 'font-awesome', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css' );
+    wp_enqueue_style( 'animate.css', get_template_directory_uri() . '/vendor/animate.css/animate.css' );
 
 	wp_enqueue_script( 'chapterland-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 	wp_enqueue_script( 'chapterland-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-    wp_enqueue_script( 'flex-nav', get_template_directory_uri(). '/vendor/flexnav/js/jquery.flexnav.min.js', array('jquery'), '20150202', true);
+    wp_enqueue_script( 'responsive-nav', get_template_directory_uri(). '/vendor/slick-nav/jquery.slicknav.js', array('jquery'), '20150202', true);
     wp_enqueue_script( 'wow', get_template_directory_uri(). '/vendor/wow/dist/wow.js', array('jquery'), '20150202', true);
-    wp_enqueue_script( 'modernizr', get_template_directory_uri(). '/vendor/tympanus/dialog-effects/modernizr.custom.js', array('jquery'), '20150205', true);
-    wp_enqueue_script( 'classie', get_template_directory_uri(). '/vendor/tympanus/dialog-effects/classie.js', array('jquery'), '20150202', true);
-    wp_enqueue_script( 'dialogFx', get_template_directory_uri(). '/vendor/tympanus/dialog-effects/dialogFx.js', array('modernizr'), '20150202', true);
+    wp_enqueue_script( 'modernizr', get_template_directory_uri(). '/vendor/tympanus/dialog-effects/modernizr.custom.js', array('jquery'), '20150205', true );
+    wp_enqueue_script( 'classie', get_template_directory_uri(). '/vendor/tympanus/dialog-effects/classie.js', array('jquery'), '20150202', true );
+    wp_enqueue_script( 'dialogFx', get_template_directory_uri(). '/vendor/tympanus/dialog-effects/dialogFx.js', array('modernizr'), '20150202', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

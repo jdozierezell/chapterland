@@ -29,7 +29,11 @@
 <?php wp_footer(); ?>
     <script>
         jQuery(document).ready(function($){
-            $('.flexnav').flexNav({'animationSpeed':'100'});
+           // $('.flexnav').flexNav({'animationSpeed':'100'});
+           $('#menu').slicknav({
+             label: "Touch for Menu",
+             allowParentLinks: true
+           });
         });
         (function() {
 

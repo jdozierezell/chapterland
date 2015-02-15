@@ -22,7 +22,8 @@
 		<?php 
 
     $showTable = get_field('include_table_of_contents_links');
-    if($showTable == 'Yes') { 
+
+    if($showTable == 'Yes') { // If the option has been chosen to show the table, let's show it.
       if( have_rows('page_content') ): ?>
     
     <h2>Table of Contents</h2>
@@ -31,7 +32,7 @@
         
         while( have_rows('page_content') ) : the_row();
 
-          if( get_row_layout() == 'text' ) : ?>
+          if( get_row_layout() == 'text' ) : // If the text layout option was chosen, show it. ?>
     
     <a href="#<?php the_sub_field('header_text_anchor'); ?>"><?php the_sub_field('section_header_text'); ?></a>
     
@@ -47,32 +48,53 @@
 
       else :
 
-      endif;
+      endif; // End text layout option display
     
     }
     
     if( have_rows('page_content') ):
 
       while( have_rows('page_content') ) : the_row();
-
-        if( get_row_layout() == 'text' ) : ?>
       
+      // attach variables to security settings
+       
+      $whoText = get_sub_field('who_text');
+      $whoFiles = get_sub_field('who_files');
+      $whoImages = get_sub_field('who_images');
+
+        if( get_row_layout() == 'text' && current_user_can($whoText) ) : // If the text layout option was chosen, show it. ?>
+        
     <h2 id="<?php the_sub_field('header_text_anchor'); ?>"><?php the_sub_field('section_header_text'); ?></h2>
     <p><?php the_sub_field('text'); ?></p>
 
+          <?php 
+
+        elseif( get_row_layout() == 'files' ) :  // End text layout option display and begin displaying the files layout ?>
+
+    <h2 id="<?php the_sub_field('header_files_anchor'); ?>"><?php the_sub_field('section_header_files'); ?></h2>
+
         <?php
+    
+          $files = get_sub_field('files');
 
-        elseif( get_row_layout() == 'file' ) :
-
-          the_sub_field('file');
+          foreach($files as $file) {
+            print_r($file); ?>
+            
+           <p><a href="<?php echo $file['file_upload']['url']; ?>"><?php echo $file['file_type'] . ' ' . $file['file_name_to_display']; ?></a></p>
+            
+          <?php
+    
+          }
         
-        endif;
+        elseif( get_row_layout() == 'images' ) : // End files layout option display and begin displaying images layout
 
-      endwhile;
+        endif; // We've covered all our bases.
 
-    else :
+      endwhile;  // We can stop showing our layouts now.
 
-    endif;
+    else : // Is there anything else?
+
+    endif;  // All the content. Nothing else to see here.
     
     ?>
 		<?php

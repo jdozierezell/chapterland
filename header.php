@@ -70,10 +70,11 @@
     </header>
     <div class="wide">
         <div class="container">
-            <nav class="main-nav">
-                <div class="menu-button" aria-controls="menu" aria-expanded="false"><?php _e( 'Touch for Menu', 'chapterland' ); ?></div>
-			<?php callMainNav(); // secret sauce located in library/navigation.php ?>
-            </nav>
+          <nav>
+<!--             <a href="#nav" title="Show navigation"><i class="fa fa-caret-square-o-down"></i>&nbsp;&nbsp;Open Menu</a>
+            <a href="#" title="Hide navigation"><i class="fa fa-caret-square-o-up"></i>&nbsp;&nbsp;Close Menu</a> -->
+			      <?php callMainNav(); // secret sauce located in library/navigation.php ?>
+          </nav>
         </div>
     </div>
     <div class="container">

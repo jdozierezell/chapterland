@@ -30,107 +30,139 @@ a:active {
 /*--------------------------------------------------------------
 Menus
 --------------------------------------------------------------*/
-.main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
-}
 
-.main-navigation ul {
-	list-style: none;
-	margin: 0;
-	padding-left: 0;
-}
 
-.main-navigation li {
-	float: left;
-	position: relative;
-}
 
-.main-navigation a {
-	display: block;
-	text-decoration: none;
-}
+/* .nav-collapse {
+  position: static;
+  ul {
+    position: relative;
+    z-index: 1000;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    ul {
+      background-color: $blue;
+      width: 340px;
+      position:absolute;
+      z-index: 100;
+      height: 0;
+      overflow: hidden;
+      -webkit-transition: height 0.3s ease-in;
+            -moz-transition: height 0.3s ease-in;
+            -o-transition: height 0.3s ease-in;
+            -ms-transition: height 0.3s ease-in;
+            transition: height 0.3s ease-in;
+      ul {
+        left: 170px;
+        width: 170px;
+      }
+      li {
+        -webkit-transition: background-color 0.3s ease;
+            -moz-transition: background-color 0.3s ease;
+            -o-transition: background-color 0.3s ease;
+            -ms-transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease;
+        :hover > ul, li a:hover > ul {
+          height: 220px;
+        }
+      }
+    }
+  }
+  > ul > li {
+    position: relative;
+    float: left;
+    margin-right: 10px;
+    > a {
+      background-color: $blue;
+      display: block;
+      padding: 1em;
+      text-decoration: none;
+      color: $white;
+      &:hover {
+        background-color: $blue2;
+        color: $gray;
+      }
+    }
+    &:hover ul ul, > a:hover ul ul {
+      height: 0;
+    }
+    &:hover ul, > a:hover ul {
+      height: 220px;
+    }
+  }
+} */
 
-.main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
-	position: absolute;
-	top: 1.5em;
-	left: -999em;
-	z-index: 99999;
-}
 
-.main-navigation ul ul ul {
-	left: -999em;
-	top: 0;
-}
-
-.main-navigation ul ul a {
-	width: 200px;
-}
-
-.main-navigation ul ul li {
-
-}
-
-.main-navigation li:hover > a {
-}
-
-.main-navigation ul ul :hover > a {
-}
-
-.main-navigation ul ul a:hover {
-}
-
-.main-navigation ul li:hover > ul {
-	left: auto;
-}
-
-.main-navigation ul ul li:hover > ul {
-	left: 100%;
-}
-
-.main-navigation .current_page_item > a,
-.main-navigation .current-menu-item > a,
-.main-navigation .current_page_ancestor > a {
-}
-
-/* Small menu. */
-.menu-toggle {
-	display: none;
-}
-
-@media screen and (max-width: 600px) {
-	.menu-toggle,
-	.main-navigation.toggled .nav-menu {
-		display: block;
-	}
-
-	.main-navigation ul {
-		display: none;
-	}
-}
-
-.site-main .comment-navigation,
-.site-main .posts-navigation,
-.site-main .post-navigation {
-	margin: 0 0 1.5em;
-	overflow: hidden;
-}
-
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-	float: left;
-	width: 50%;
-}
-
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-	float: right;
-	text-align: right;
-	width: 50%;
-}
+/* #nav { 
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+  li {
+    position: relative;
+    list-style: none;
+    text-transform: none;
+    ul { // second level menu
+      background-color: $blue;
+      border-bottom: $yellow 2px solid;
+      display: none;
+      padding: 0 .5em;
+      position: absolute;
+    }
+    &:hover ul {
+      display: block;
+    }
+  }
+  > a {
+    display: none;
+  }
+  > ul { // first level menu
+    height: 3.75em;
+    margin: 0;
+    padding: 0;
+    > li {
+      width: 12%;
+      height: 100%;
+      display: inline-block;
+      text-transform: uppercase;
+    }
+  }
+  @media(max-width:$widePhone) {
+    position: relative;
+    li { 
+      border-bottom: $cyan 1px solid;
+      &:last-of-type {
+        border-bottom: none;
+      }
+      ul {
+        position: static;
+      }
+    }
+    > a {
+        display: none;
+    }
+    &:not( :target ) > a:first-of-type,
+    &:target > a:last-of-type {
+      display: block;
+      padding: .2em 1em;
+      text-transform: uppercase;
+    }
+    > ul {
+      background-color: $cyan;
+      height: auto;
+      display: none;
+      position: absolute;
+      left: 0;
+      right: 0;
+      > li {
+        width: 100%;
+        float: none;
+      }
+    }
+    &:target > ul {
+      display: block;
+    }
+  }
+} */
+  
