@@ -30,10 +30,11 @@
     <script>
         jQuery(document).ready(function($){
            // $('.flexnav').flexNav({'animationSpeed':'100'});
-           $('#menu').slicknav({
+           $( '#menu' ).slicknav({
              label: "Touch for Menu",
              allowParentLinks: true
            });
+         // $( '#menu li:has(ul)' ).doubleTapToGo();
         });
         (function() {
 

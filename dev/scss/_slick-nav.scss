@@ -24,6 +24,10 @@
 .slicknav_menu { *zoom: 1 }
 
 
+/* 
+ * Desktop Menu Styles 
+*/
+
 #menu {
   font-size: 0.9em;
   margin: 0;
@@ -39,15 +43,14 @@
     max-height: 0;
     overflow: hidden;
     padding: 0;
-    -webkit-transition: max-height 0.3s ease-in;
-          -moz-transition: max-height 0.3s ease-in;
-          -o-transition: max-height 0.3s ease-in;
-          -ms-transition: max-height 0.3s ease-in;
-          transition: max-height 0.3s ease-in;
+    transition: max-height 0.3s ease-in;
     li {
       padding: 0.3em 0.6em;
       &:last-of-type {
         border-bottom: $yellow 0.2em solid;
+      }
+      a {
+        display: block;
       }
     }
   }
@@ -55,11 +58,7 @@
     list-style: none;
     text-align: left;
     text-transform: none;
-    -webkit-transition: background-color 0.3s ease;
-        -moz-transition: background-color 0.3s ease;
-        -o-transition: background-color 0.3s ease;
-        -ms-transition: background-color 0.3s ease;
-        transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease;
     &:hover {
       background-color: $blue2;
     }
@@ -112,17 +111,20 @@
       padding: 1em;
       text-decoration: none;
       color: $white;
+      transition: background-color 0.3s ease;
       &:hover {
         background-color: $blue2;
         color: $white;
       }
     }
   }
+  @media(min-width: $tablet) and (max-width: $wideTablet){
+    font-size: 0.7em;
+  }
 }
 
 /* 
-    User Default Style
-    Change the following styles to modify the appearance of the menu.
+    Mobile Menu Styles
 */
 
 .slicknav_menu {
@@ -130,7 +132,7 @@
     font-size: 1.2em;
     text-transform: uppercase;
 }
-@media screen and (max-width: $widePhone) {
+@media screen and (max-width: $tablet) {
   // hide original menu
   .js #menu {
     display: none;
@@ -144,8 +146,6 @@
     margin: 5px 5px 6px;
     text-decoration:none;
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
     border-radius: 4px;  
     background-color: $blue2;
 }
@@ -194,8 +194,6 @@
 }
 .slicknav_nav .slicknav_row:hover,
 .slicknav_nav a:hover {
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
     border-radius: 6px;
     background: $cyan;
     color: $blue;

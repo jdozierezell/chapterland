@@ -31,6 +31,11 @@ require('library/custom_login.php');
 require('widgets/login.php');
 
 /**
+ *  Require custom image sizes 
+ */
+require('library/image_sizes.php');
+
+/**
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
@@ -109,7 +114,7 @@ function chapterland_scripts() {
 
 	wp_enqueue_script( 'chapterland-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 	wp_enqueue_script( 'chapterland-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-    wp_enqueue_script( 'responsive-nav', get_template_directory_uri(). '/vendor/slick-nav/jquery.slicknav.js', array('jquery'), '20150202', true);
+    wp_enqueue_script( 'slick-nav', get_template_directory_uri(). '/vendor/slick-nav/jquery.slicknav.js', array('jquery'), '20150202', true);
     wp_enqueue_script( 'wow', get_template_directory_uri(). '/vendor/wow/dist/wow.js', array('jquery'), '20150202', true);
     wp_enqueue_script( 'modernizr', get_template_directory_uri(). '/vendor/tympanus/dialog-effects/modernizr.custom.js', array('jquery'), '20150205', true );
     wp_enqueue_script( 'classie', get_template_directory_uri(). '/vendor/tympanus/dialog-effects/classie.js', array('jquery'), '20150202', true );
